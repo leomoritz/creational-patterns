@@ -1,17 +1,17 @@
 package br.com.cod3r.abstractfactory.app.service.factory.domain;
 
-import br.com.cod3r.abstractfactory.app.service.services.Service;
 import br.com.cod3r.abstractfactory.app.service.services.UserEJBService;
 import br.com.cod3r.abstractfactory.app.service.services.UserRestApiService;
+import br.com.cod3r.abstractfactory.app.service.services.UserService;
 
-public class UserServiceFactoryImpl implements ServicesAbstractFactory {
+public class UserServiceFactoryImpl implements DomainServicesAbstractFactory {
     @Override
-    public Service createEJBService() {
+    public UserService createEJBService() {
         return new UserEJBService();
     }
 
     @Override
-    public Service createRestApiService() {
+    public UserService createRestApiService() {
         return new UserRestApiService();
     }
 }

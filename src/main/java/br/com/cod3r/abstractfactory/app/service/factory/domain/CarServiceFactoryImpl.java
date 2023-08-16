@@ -2,16 +2,16 @@ package br.com.cod3r.abstractfactory.app.service.factory.domain;
 
 import br.com.cod3r.abstractfactory.app.service.services.CarEJBService;
 import br.com.cod3r.abstractfactory.app.service.services.CarRestApiService;
-import br.com.cod3r.abstractfactory.app.service.services.Service;
+import br.com.cod3r.abstractfactory.app.service.services.CarService;
 
-public class CarServiceFactoryImpl implements ServicesAbstractFactory {
+public class CarServiceFactoryImpl implements DomainServicesAbstractFactory {
     @Override
-    public Service createEJBService() {
+    public CarService createEJBService() {
         return new CarEJBService();
     }
 
     @Override
-    public Service createRestApiService() {
+    public CarService createRestApiService() {
         return new CarRestApiService();
     }
 }
