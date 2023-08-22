@@ -5,14 +5,23 @@ import java.util.List;
 
 public class ConnectionPool {
 	private final static int POOL_SIZE = 2;
-	private List<Connection> connectionsPool;
+	private final List<Connection> connectionsPool;
+
+	private static ConnectionPool instance = new ConnectionPool();
 	
-	public ConnectionPool() {
+	private ConnectionPool() {
 		System.out.println("Creating Connection Pool");
-		connectionsPool = new ArrayList<Connection>();
+		connectionsPool = new ArrayList<>();
 		for(int i = 0; i < POOL_SIZE; i++) {
 			connectionsPool.add(new Connection());
 		}
+	}
+
+	public static ConnectionPool getInstance() {
+		if(instance == null) {
+			instance = new ConnectionPool();
+		}
+		return instance;
 	}
 	
 	public Connection getConnection() {
