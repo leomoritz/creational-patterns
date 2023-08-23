@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class PersonSamples {
-	private Map<String, Person> samples;
+	private final Map<String, Person> samples;
 	
 	public PersonSamples() {
 		samples = new HashMap<>();
